@@ -30,13 +30,13 @@
     };
 
     $(function(){
-//      CKEDITOR.plugins.addExternal('youtube', '/ckeditor/plugins/youtube/plugin.js');
+      CKEDITOR.plugins.addExternal('youtube', '/videodetector/plugin.js');
       CKEDITOR.replace('editor1', {
         allowedContent: true,
         contentsCss: 'https://jpassets.jobplanet.co.kr/assets/partners-5ca7f9ab37174c7ecad0716337c8daf9ac3b90e52ed7e209f05c8f54ff935149.css',
         enterMode: CKEDITOR.ENTER_BR,
         startupOutlineBlocks: true,
-        extraPlugins: 'youtube'
+        extraPlugins: 'videodetector'
       });
 
       $('button#btn_paragraph').on('click', function(e) {
