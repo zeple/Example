@@ -36,7 +36,18 @@
         contentsCss: 'https://jpassets.jobplanet.co.kr/assets/partners-5ca7f9ab37174c7ecad0716337c8daf9ac3b90e52ed7e209f05c8f54ff935149.css',
         enterMode: CKEDITOR.ENTER_BR,
         startupOutlineBlocks: true,
-        extraPlugins: 'videodetector'
+        height: 800,
+        extraPlugins: 'videodetector',
+        toolbar: [
+          { name: 'document', items: [ 'NewPage', 'Preview' ] },
+          { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', '-', 'Undo', 'Redo' ] },
+          { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll' ] },
+          { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+          { name: 'paragraph', items: [ 'NumberedList', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+          { name: 'links', items: [ 'Link', 'Unlink' ] },
+          { name: 'insert', items: [ 'Image', 'VideoDetector', 'Table', 'HorizontalRule' ] },
+        ],
+        removePlugins: 'iframe'
       });
 
       $('button#btn_paragraph').on('click', function(e) {
@@ -59,8 +70,5 @@
     });
 
   </script>
-  <style type="text/css">
-  .subtext { font-color: red; }
-  </style>
 </body>
 </html>
