@@ -46,8 +46,21 @@ CKEDITOR.dialog.add( 'videoDialog', function( editor ) {
             var iframe = new CKEDITOR.dom.element('iframe');
             iframe.setAttribute('src', url);
             iframe.setAttribute('frameborder', '0');
-            iframe.setAttribute('allowfullscreen', '')
+            iframe.setAttribute('width', '640');
+            iframe.setAttribute('height', '360');
+
+            // var edit_btn = new CKEDITOR.dom.element('input');
+            // edit_btn.setAttribute('type', 'button');
+            // edit_btn.setAttribute('value', 'Edit video');
+            // edit_btn.setAttribute('class', 'edit-videodetector');
+            // p.append(edit_btn);
+
             editor.insertElement(iframe);
+
+            // edit_btn.on('click', function(){
+            //     new CKEDITOR.dialog(editor, 'videoDialog');
+            // });
+
         }
     };
 });
