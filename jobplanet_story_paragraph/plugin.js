@@ -17,7 +17,7 @@ CKEDITOR.plugins.add( 'jobplanetStoryParagraph', {
                 if (!tag) {
                     var range = editor.getSelection().getRanges()[0];
                     var el = editor.document.createElement('div');
-                    var html = '이곳에 내용을 입력해 주세요';
+                    var html = '문단 영역입니다.';
 
                     if (range && range.cloneContents().getHtml()) {
                         el.append(range.cloneContents());
