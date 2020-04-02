@@ -17,7 +17,7 @@ CKEDITOR.plugins.add( 'jobplanetStoryDescription', {
                 if (!tag) {
                     var range = editor.getSelection().getRanges()[0];
                     var el = editor.document.createElement('div');
-                    var html = '이곳에 을 입력해 주세요';
+                    var html = '이곳에 본문을 입력해 주세요';
 
                     if (range && range.cloneContents().getHtml()) {
                         el.append(range.cloneContents());
