@@ -36,7 +36,7 @@ CKEDITOR.plugins.add( 'jobplanetStorySubtitle', {
         });
 
         editor.ui.addButton( 'JobplanetStorySubtitle', {
-            label: '문단으로 감싸거나 영역을 추가합니다.',
+            label: '소제목으로 감싸거나 영역을 추가합니다.',
             command: 'insertJobplanetStorySubtitle',
             icon: CKEDITOR.plugins.getPath('jobplanetStorySubtitle') + 'icons/icon.png'
         });
