@@ -3,35 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>CKEditor</title>
-  <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>
+  <script src="./ckeditor/ckeditor.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
   <textarea name="editor1"></textarea>
-  <div style="margin-top: 10px;">
-    <button id="btn_paragraph">문단지정</button>
-    <button id="btn_subtitle">소제목지정</button>
-    <button id="btn_description">본문지정</button>
-  </div>
   <script>
-    var getSelectionEditor = function() {
-      var editor = CKEDITOR.instances.editor1,
-          range = editor.getSelection().getRanges()[ 0 ],
-          el = editor.document.createElement( 'div' );
-
-          if (range)
-            el.append(range.cloneContents());
-
-      return {
-        instance: editor,
-        range: range,
-        selection_html: el.getHtml()
-      };
-    };
-
     $(function(){
-      CKEDITOR.plugins.addExternal('videodetector', 'https://zeple.github.io/Example/videodetector/plugin.js');
-      CKEDITOR.plugins.addExternal('jobplanetCompanyStory', 'https://zeple.github.io/Example/jobplanet_company_story/plugin.js');
+      CKEDITOR.plugins.addExternal('videodetector', '../videodetector/plugin.js');
+      CKEDITOR.plugins.addExternal('jobplanetCompanyStory', '../jobplanet_company_story/plugin.js');
       CKEDITOR.replace('editor1', {
         customConfig: '',
         allowedContent: true,
@@ -51,26 +31,7 @@
         ],
         removePlugins: 'iframe'
       });
-
-      $('button#btn_paragraph').on('click', function(e) {
-        var editor = getSelectionEditor();
-        var element = CKEDITOR.dom.element.createFromHtml('<div class="jplyst_section">' + editor.selection_html + '</div>');
-        editor.instance.insertElement(element);
-      });
-
-      $('button#btn_subtitle').on('click', function(e) {
-        var editor = getSelectionEditor();
-        var element = CKEDITOR.dom.element.createFromHtml('<div class="subtext">' + editor.selection_html + '</div>');
-        editor.instance.insertElement(element);
-      });
-
-      $('button#btn_description').on('click', function(e) {
-        var editor = getSelectionEditor();
-        var element = CKEDITOR.dom.element.createFromHtml('<div class="description">' + editor.selection_html + '</div>');
-        editor.instance.insertElement(element);
-      });
     });
-
   </script>
 </body>
 </html>
